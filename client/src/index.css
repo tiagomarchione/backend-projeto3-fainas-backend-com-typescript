@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #92c0dd;
+  }
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  display: flex;
+  padding: 16px;
+}
+
+.ReactModal__Content {
+  position: initial !important;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 16px !important;
+}
