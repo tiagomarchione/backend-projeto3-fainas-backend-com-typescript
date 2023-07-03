@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import { useState } from "react";
 import { useGlobalStore } from "./useGlobalStore";
-import axios from "axios";
+import { axios } from "./useAxios";
 import toast from "react-simple-toasts";
 
 type RequestEmailVerificationCodeOutput = {
@@ -51,8 +51,8 @@ export function EmailVerificationModal() {
         }
     }
 
-    async function verifyEmail(codeForm: string) {
-        const response = await axios.post<VerifyEmailOutput>('/auth/verify-email', { codeForm });
+    async function verifyEmail(code: string) {
+        const response = await axios.post<VerifyEmailOutput>('/auth/verify-email', { code });
         const data = response.data;
         return data;
     }

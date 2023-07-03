@@ -5,7 +5,7 @@ export type ToDo = {
     deadline: string;
     createdAt: string;
     category: string;
-    userId: number;
+    user: number;
 };
 
 export type User = {
@@ -16,5 +16,13 @@ export type User = {
     email: string,
     userPicture: string | null;
 };
+
+export type Resenha = {
+    id: number,
+    content: string,
+    sender: number,
+    receiver: number,
+    createdAt: string,
+}
 
 export type ToDoItem = ToDo & { user?: User };

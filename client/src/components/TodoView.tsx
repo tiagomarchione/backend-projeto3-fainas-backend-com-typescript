@@ -33,7 +33,7 @@ export function TodoView({
     deadline = "",
     createdAt,
     category = "",
-    userId = 0,
+    user: userId,
     onDelete,
 }: TodoViewProps) {
     const user = useGlobalStore(state => state.user);

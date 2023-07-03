@@ -13,6 +13,7 @@ import { LoadAuthUser } from "./LoadAuthUser";
 import { CreateAccount } from "./routes/CreateAccount";
 import { EmailVerificationModal } from "./EmailVerificationModal";
 import { UserView } from "./routes/UserView";
+import { Resenha } from "./routes/Resenha";
 
 function App() {
  
@@ -32,6 +33,7 @@ function App() {
           <Route path="/criar-conta" element={<CreateAccount/>} />
           <Route path="/usuario" element={<Myself/>} />
           <Route path="/usuarios/:id" element={<UserView/>} />
+          <Route path="/resenha" element={<Resenha/>} />
         </Routes>
       </main>
       <Footer />

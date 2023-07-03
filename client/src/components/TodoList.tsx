@@ -1,7 +1,7 @@
 import { type } from "os";
 import type { ToDoItem } from "../types";
 import { getColorByValue } from "../constants/categories";
-import { UserItem } from "./UserItem";
+import { UserItemResenha } from "./UserItem";
 
 const texts = {
   loadNextButton: "Próxima",
@@ -35,7 +35,9 @@ export function TodoList({ todoList, getTodo, loadNext = false, loadPrevious = f
                     }}
                   >
                     <div className="flex flex-col">
-                      {ToDoItem.user !== undefined && typeof ToDoItem.user !== 'number' && <UserItem user={ ToDoItem.user } />}
+                      {ToDoItem.user !== undefined && typeof ToDoItem.user !== 'number' && (
+                          <UserItemResenha user={ ToDoItem.user } />
+                      )}
                       <p className="font-bold text-2xl border-b-2 border-b-slate-300">{ ToDoItem.title }</p>
                       <div className="flex justify-between p-2">
                         <p className="flex font-semibold self-end items-center gap-1"><span style={{backgroundColor: getColorByValue(ToDoItem.category)}} className="flex border h-3 w-3 rounded-full"></span>{ ToDoItem.category }</p>

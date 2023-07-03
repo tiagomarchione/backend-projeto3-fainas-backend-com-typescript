@@ -34,14 +34,16 @@ export class EmailService {
     }) {
         try {
             const response = await this.mailgunClient.messages.create(
-                'sandbox-123.mailgun.org',
+                'sandbox6d546f212f574a81baa13624529c5f7a.mailgun.org',
                 {
-                    from: 'Sysfainas <mailgun@sandbox-123.mailgun.org>',
+                    from: 'Sysfainas <mailgun@sandbox6d546f212f574a81baa13624529c5f7a.mailgun.org>',
                     to: [to],
                     subject,
                     text,
                 },
             );
+            console.log(to, subject, text);
+            console.log(response);
             return true;
         } catch (error) {
             console.log(error);

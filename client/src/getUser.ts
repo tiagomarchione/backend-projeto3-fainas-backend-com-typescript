@@ -6,7 +6,7 @@ export type GetUserOutPut = User & {
 };
 
 export async function getUser(userId: number) : Promise<GetUserOutPut> {
-    const response = await axios.get(`/users/${userId}`);
+    const response = await axios.get(`users/${userId}`);
     const user = response.data;
     return user;
 }

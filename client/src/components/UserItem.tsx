@@ -15,3 +15,14 @@ export function UserItem({ user } : UserItemProps) {
         </a>
     )
 }
+
+export function UserItemResenha({ user } : UserItemProps) {
+    return (    
+        <div className="flex flex-row gap-3 items-center cursor-pointer">
+            <img src={loadUserPicture(user.userPicture)} className="rounded-full w-10" />
+            <span className="font-bold text-lg ">
+                {user.name} {user.surname}
+            </span>
+        </div>
+    )
+}

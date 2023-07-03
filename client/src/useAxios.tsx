@@ -1,11 +1,11 @@
 import Axios from "axios";
 import { configure } from "axios-hooks";
-import { error } from "console";
 import toast from "react-simple-toasts";
 import { AuthToken } from "./authToken";
 import { browserHistory } from "./browserHistory";
 import { ErrorToast } from "./components/ErrorToast";
 export { default as useAxios } from "axios-hooks";
+
 
 const texts = {
     unauthenticatedError: 'Sua sessão expirou. Faça o login novamente.',
@@ -20,7 +20,7 @@ Axios.defaults.validateStatus = (status) => {
 }
 
 export const axios = Axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: process.env.REACT_APP_API_URL,
 });
 
 axios.interceptors.response.use(undefined, (response) => {

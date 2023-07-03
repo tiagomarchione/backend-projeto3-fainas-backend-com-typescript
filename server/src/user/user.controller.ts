@@ -13,6 +13,11 @@ constructor(private readonly userService : UserService) {}
         return user;
     }
 
+    @Get()
+    users() {
+        return this.userService.findAll();
+    }    
+
     @Get(':id')
     async findOne( @Param('id') id: number) {
         const { password, ...user } = await this.userService.findById(id);

@@ -12,6 +12,7 @@ const texts = {
     login: "Entrar",
     createAccount: "Criar Conta",
     logout: "Sair",
+    resenha: "Resenha",
 }
 
 export function Navbar() {
@@ -53,6 +54,12 @@ function onLogout() {
                                 navigate("/criar-faina")
                             }}
                             className=" self-center bg-green-500 hover:bg-green-700 text-sm text-white px-4 py-2 font-bold rounded-lg">{texts.newFaina}
+                        </button>
+                        <button
+                            onClick={() => {
+                                navigate("/resenha")
+                            }}
+                            className=" self-center bg-green-500 hover:bg-green-700 text-sm text-white px-4 py-2 font-bold rounded-lg">{texts.resenha}
                         </button>
                         <div className="flex flex-row self-center gap-4  text-blue-600 hover:text-blue-800">
                             <a href="/usuario" className="flex flex-row gap-2">

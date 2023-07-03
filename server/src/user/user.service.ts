@@ -19,6 +19,13 @@ export class UserService {
         return user;
     }
 
+    async findAll() {
+        const users = await this.userRepository.findAll({
+            fields: ['id', 'name', 'surname', 'userPicture', 'createdAt'],
+        });
+        return users;
+    }
+
     findByEmail(email: string) {
         return this.userRepository.findOne({ email });
     }

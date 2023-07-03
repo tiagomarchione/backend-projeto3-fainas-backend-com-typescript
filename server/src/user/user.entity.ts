@@ -3,6 +3,7 @@ import * as bcrypt from "bcrypt";
 import { Faina } from "../fainas/faina.entity";
 import { Comment } from "../comments/comment.entity";
 import { Email } from "../email/email.entity";
+import { Resenha } from "../resenha/resenha.entity";
 
 @Entity()
 export class User {
@@ -37,6 +38,12 @@ export class User {
     @OneToMany(() => Comment, (comment) => comment.user)
     comments = new Collection<Comment>(this);
     
+    @OneToMany(() => Resenha, (resenha) => resenha.sender)
+    sentResenhas = new Collection<Resenha>(this);
+
+    @OneToMany(() => Resenha, (resenha) => resenha.receiver)
+    receivedResenhas = new Collection<Resenha>(this);
+
     @OneToMany(() => Email, (email) => email.user)
     emailVerifications = new Collection<Email>(this);
 

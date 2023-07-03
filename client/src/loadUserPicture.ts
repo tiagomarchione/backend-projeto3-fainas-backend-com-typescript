@@ -4,6 +4,6 @@ export function loadUserPicture(userPicture: string | null) {
     } else if(userPicture?.startsWith('http')) {
         return userPicture;
     } else {
-        return `http://localhost/8080${userPicture}`;
+        return `${process.env.REACT_APP_API_URL}/${userPicture}`;
     }
 }

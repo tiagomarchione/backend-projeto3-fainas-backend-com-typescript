@@ -22,7 +22,7 @@ export class AuthController {
         return this.authService.createAccount(createUserDto);
     }
 
-    @Post('/request-email-cerification-code')
+    @Post('/request-email-verification-code')
     requestEmailVerificationCode(@Req() req : Request) {
         const userId = req['user'].id;
         return this.authService.requestEmailVerificationCode(userId);
